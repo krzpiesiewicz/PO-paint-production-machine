@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="parent" focusTraversable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainController">
+   <children>
+      <HBox focusTraversable="true" layoutX="9.0" layoutY="10.0" spacing="50.0">
+         <children>
+            <VBox focusTraversable="true" spacing="20.0">
+               <children>
+                  <Label text="Farby:">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addPaint" focusTraversable="false" mnemonicParsing="false" text="Dodaj farbę">
+                     <tooltip>
+                        <Tooltip text="Dodaj nową  farbę o losowej i unikatowej nazwie" />
+                     </tooltip>
+                  </Button>
+                  <ListView id="paintsList" fx:id="paintsList" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="430.0">
+                     <tooltip>
+                        <Tooltip text="Wybierz farbę" />
+                     </tooltip>
+                  </ListView>
+                  <Label text="Parametry farby:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <GridPane hgap="10.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="92.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="318.0" minWidth="10.0" prefWidth="318.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Kolor:" />
+                        <Label text="Toksyczność:" GridPane.rowIndex="1" />
+                        <Label text="Jakość:" GridPane.rowIndex="2" />
+                        <TextField fx:id="paintToxicity" disable="true" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="paintQuality" disable="true" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="paintColour" disable="true" editable="false" focusTraversable="false" GridPane.columnIndex="1" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </GridPane>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="226.0" minWidth="10.0" prefWidth="164.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="266.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="savePaint" disable="true" mnemonicParsing="false" text="Zapisz parametry">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                           <tooltip>
+                              <Tooltip text="Zapisuje parametry farby." />
+                           </tooltip>
+                        </Button>
+                        <Button fx:id="cancelPaint" alignment="CENTER_RIGHT" contentDisplay="RIGHT" disable="true" mnemonicParsing="false" text="Porzuć" GridPane.columnIndex="1">
+                           <tooltip>
+                              <Tooltip text="Anuluje edycję/dodanie farby." />
+                           </tooltip></Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </GridPane>
+                  <VBox fillWidth="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="430.0" spacing="10.0">
+                  	<children>
+                  		<Label contentDisplay="CENTER" text="Mieszanie farb:">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label text="Aktualna farba:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <VBox spacing="10.0">
+                           <children>
+                              <GridPane hgap="20.0" prefHeight="98.0" prefWidth="516.0" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="37.0" prefWidth="77.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="249.0" prefWidth="313.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label maxWidth="-Infinity" minWidth="-Infinity" text="Kolor:" />
+                                    <Label maxWidth="-Infinity" minWidth="-Infinity" text="Toksyczność:" GridPane.rowIndex="1" />
+                                    <Label maxWidth="-Infinity" minWidth="-Infinity" text="Jakość:" GridPane.rowIndex="2" />
+                                    <TextField fx:id="currColour" disable="true" editable="false" focusTraversable="false" GridPane.columnIndex="1" />
+                                    <TextField fx:id="currToxicity" disable="true" editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="currQuality" disable="true" editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </VBox>
+                        <GridPane hgap="20.0" minWidth="384.0" prefHeight="26.0" prefWidth="438.0" vgap="10.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="10.0" prefWidth="157.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.0" minWidth="198.0" prefWidth="243.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="chosenPigment" disable="true" editable="false" focusTraversable="false" prefHeight="26.0" prefWidth="233.0" GridPane.columnIndex="1" />
+                              <Label minWidth="-Infinity" text="Wybrany pigment:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="173.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.0" minWidth="10.0" prefWidth="178.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                  		<ButtonBar buttonMinWidth="0.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" prefWidth="423.0" snapToPixel="false">
+                  			<buttons>
+                              <Button fx:id="finishBlending" disable="true" focusTraversable="false" mnemonicParsing="false" text="Zakończ mieszanie">
+                                 <tooltip>
+                                    <Tooltip text="Kończy mieszanie farby" />
+                                 </tooltip>
+                              </Button>
+                  				<Button fx:id="usePigment" disable="true" focusTraversable="false" maxWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Użyj pigmentu">
+                  					<tooltip>
+                  						<Tooltip text="Domieszaj do aktualnej farby wybrany pigment" />
+                  					</tooltip>
+                  				</Button>
+                  				<Button id="blend" fx:id="blend" disable="true" focusTraversable="false" maxWidth="70.0" mnemonicParsing="false" prefHeight="26.0" text="Mieszaj">
+                  					<tooltip>
+                  						<Tooltip text="Rozpocznij mieszanie wybranej farby" />
+                  					</tooltip>
+                  				</Button>
+                  			</buttons>
+                  			<VBox.margin>
+                  				<Insets />
+                  			</VBox.margin>
+                  		</ButtonBar>
+                  	</children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox focusTraversable="true" spacing="20.0">
+               <children>
+                  <Label text="Pigmenty:">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addPigment" focusTraversable="false" mnemonicParsing="false" text="Dodaj pigment">
+                     <tooltip>
+                        <Tooltip text="Dodaj nowy pigment o losowej i unikatowej nazwie" />
+                     </tooltip>
+                  </Button>
+                  <ListView id="pigmentsList" fx:id="pigmentsList" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="430.0">
+                     <tooltip>
+                        <Tooltip text="Wybierz pigment" />
+                     </tooltip>
+                  </ListView>
+                  <Label text="Parametry pigmentu:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <VBox focusTraversable="true" spacing="20.0">
+                     <children>
+                        <GridPane focusTraversable="true" hgap="10.0" vgap="10.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="114.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.0" minWidth="10.0" prefWidth="296.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Nazwa pigmentu:" />
+                              <TextField fx:id="pigmentName" disable="true" editable="false" focusTraversable="false" prefHeight="26.0" prefWidth="300.0" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="162.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="258.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Button fx:id="savePigment" disable="true" mnemonicParsing="false" text="Zapisz parametry">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                                 <tooltip>
+                                    <Tooltip text="Zapisuje parametry pigmentu." />
+                                 </tooltip>
+                              </Button>
+                              <Button fx:id="cancelPigment" alignment="CENTER_RIGHT" contentDisplay="RIGHT" disable="true" mnemonicParsing="false" text="Porzuć" GridPane.columnIndex="1">
+                                 <tooltip>
+                                    <Tooltip text="Anuluje edycję/dodanie pigmentu." />
+                                 </tooltip></Button>
+                           </children>
+                        </GridPane>
+                        <Label text="Działanie pigmentu:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <VBox focusTraversable="true" spacing="15.0">
+                           <children>
+                              <GridPane focusTraversable="true">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="162.0" minWidth="10.0" prefWidth="105.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="305.0" minWidth="10.0" prefWidth="305.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Wybierz Kolor:">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <ComboBox fx:id="chooseColour" disable="true" focusTraversable="false" minWidth="-Infinity" prefHeight="26.0" prefWidth="305.0" GridPane.columnIndex="1" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </GridPane>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="238.0" minWidth="10.0" prefWidth="208.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="202.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Button fx:id="addUseOfPigment" disable="true" focusTraversable="false" mnemonicParsing="false" prefHeight="26.0" prefWidth="199.0" text="Dodaj działanie pigmentu">
+                                       <tooltip>
+                                          <Tooltip text="Dodaje nowe działanie pigmentu." />
+                                       </tooltip>
+                                    </Button>
+                                    <Button fx:id="deleteUseOfPigment" disable="true" focusTraversable="false" mnemonicParsing="false" text="Usuń działanie pigmentu" GridPane.columnIndex="1">
+                                       <tooltip>
+                                          <Tooltip text="Usuwa wybrane działanie pigmentu." />
+                                       </tooltip>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                              <GridPane focusTraversable="true" hgap="10.0" vgap="10.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.0" minWidth="10.0" prefWidth="145.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="263.0" minWidth="10.0" prefWidth="255.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Kolor wyjściowy:" />
+                                    <TextField fx:id="initialColour" disable="true" editable="false" focusTraversable="false" GridPane.columnIndex="1" />
+                                    <Label text="Zmiana toksyczności:" GridPane.rowIndex="2" />
+                                    <TextField fx:id="resultingColour" disable="true" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label text="Zmiana jakości:" GridPane.rowIndex="3" />
+                                    <TextField fx:id="toxicityChange" disable="true" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label text="Kolor wynikowy:" GridPane.rowIndex="1" />
+                                    <TextField fx:id="qualityChange" disable="true" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.0" minWidth="10.0" prefWidth="73.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="349.0" minWidth="10.0" prefWidth="337.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Button fx:id="cancelUseOfPigment" alignment="CENTER_RIGHT" contentDisplay="RIGHT" disable="true" mnemonicParsing="false" text="Porzuć">
+                                       <tooltip>
+                                          <Tooltip text="Anuluje edycję/dodanie działanie pigmentu." />
+                                       </tooltip>
+                                    </Button>
+                                    <Button fx:id="saveUseOfPigment" disable="true" mnemonicParsing="false" prefHeight="26.0" prefWidth="197.0" text="Zapisz działanie pigmentu" GridPane.columnIndex="1">
+                                       <tooltip>
+                                          <Tooltip text="Zapisuje działanie pigmentu." />
+                                       </tooltip></Button>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</Pane>
